@@ -1,0 +1,93 @@
+#ifndef AWSCREDENTAILS_H
+#define AWSCREDENTAILS_H
+
+#include <string>
+
+using std::string;
+
+// The name of the device. This MUST match up with the name defined in the AWS console
+const string device_name = "pmt2esp32";
+
+// The MQTTT endpoint for the device (unique for each AWS account but shared amongst devices within the account)
+const string aws_iot_endpoint = "a38zt4xcb90xlj-ats.iot.eu-central-1.amazonaws.com";
+
+// The MQTT topic that this device should publish to
+const string aws_iot_topic = "$aws/things/" + device_name + "/shadow/update";
+
+// How many times we should attempt to connect to AWS
+const int aws_max_reconnect_tries = 50;
+
+// Amazon's root CA. This should be the same for everyone.
+const string aws_cert_ca = R""""(-----BEGIN CERTIFICATE-----
+MIIDQTCCAimgAwIBAgITBmyfz5m/jAo54vB4ikPmljZbyjANBgkqhkiG9w0BAQsF
+ADA5MQswCQYDVQQGEwJVUzEPMA0GA1UEChMGQW1hem9uMRkwFwYDVQQDExBBbWF6
+b24gUm9vdCBDQSAxMB4XDTE1MDUyNjAwMDAwMFoXDTM4MDExNzAwMDAwMFowOTEL
+MAkGA1UEBhMCVVMxDzANBgNVBAoTBkFtYXpvbjEZMBcGA1UEAxMQQW1hem9uIFJv
+b3QgQ0EgMTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBALJ4gHHKeNXj
+ca9HgFB0fW7Y14h29Jlo91ghYPl0hAEvrAIthtOgQ3pOsqTQNroBvo3bSMgHFzZM
+9O6II8c+6zf1tRn4SWiw3te5djgdYZ6k/oI2peVKVuRF4fn9tBb6dNqcmzU5L/qw
+IFAGbHrQgLKm+a/sRxmPUDgH3KKHOVj4utWp+UhnMJbulHheb4mjUcAwhmahRWa6
+VOujw5H5SNz/0egwLX0tdHA114gk957EWW67c4cX8jJGKLhD+rcdqsq08p8kDi1L
+93FcXmn/6pUCyziKrlA4b9v7LWIbxcceVOF34GfID5yHI9Y/QCB/IIDEgEw+OyQm
+jgSubJrIqg0CAwEAAaNCMEAwDwYDVR0TAQH/BAUwAwEB/zAOBgNVHQ8BAf8EBAMC
+AYYwHQYDVR0OBBYEFIQYzIU07LwMlJQuCFmcx7IQTgoIMA0GCSqGSIb3DQEBCwUA
+A4IBAQCY8jdaQZChGsV2USggNiMOruYou6r4lK5IpDB/G/wkjUu0yKGX9rbxenDI
+U5PMCCjjmCXPI6T53iHTfIUJrU6adTrCC2qJeHZERxhlbI1Bjjt/msv0tadQ1wUs
+N+gDS63pYaACbvXy8MWy7Vu33PqUXHeeE6V/Uq2V8viTO96LXFvKWlJbYK8U90vv
+o/ufQJVtMVT8QtPHRh8jrdkPSHCa2XV4cdFyQzR1bldZwgJcJmApzyMZFo6IQ6XU
+5MsI+yMRQ+hDKXJioaldXgjUkK642M4UwtBV8ob2xJNDd2ZhwLnoQdeXeGADbkpy
+rqXRfboQnoZsG4q5WTP468SQvvG5
+-----END CERTIFICATE-----)"""";
+
+// The private key for your device
+const string aws_cert_private = R""""(-----BEGIN RSA PRIVATE KEY-----
+MIIEpAIBAAKCAQEAuiKnvGFBmmY7bBH7eze91k2jSec9R72GojzRtxuJrivFndEL
+RbSM2I6RTmOeHnKzpSWzw0Q3Di4DYtSZeGcyCL8amsvGLF/2Z0217JM5Lma0ofRh
+StgSEOLgHcwsf6CWwO9PhQRg0yVzpmDyEJRvvdoXq/QvnTdLQaJQD6WQ8XnhKyJF
+K4F6DTKD17L4hFEpIpJAeAf+2AFzTOazMLkZd1787oY4BJ1DC3BEouRkjR198MRK
+5Sj3Li9VvNXvZN/TMELyUrGyITj0YS3Mu72ursE0cuuJ51PqtCRTH+sLvgKGh8/p
+9NwZr/pPRe+w1te5aIoetSwb1kEPjopwMK0qGwIDAQABAoIBAFF3kYq11ozJagCm
+7jbD8ua1HF7gQsX/gcnIbNGD0ALXTasBL7nWiD7QR3DT0QTqlw4VLlSsqpweL4U2
+H+W+5PtHCVHvFlGdvq8AKDvfRAu3ECBCYcLsRxv08LqZ/m/tzY2sMFW70NUZc0DC
+9a+kCDREHFA6lAxvgxS7AeeXQ5UsT+J4BnhuXVxGf2DLu2XCeoi4Adb3NIqERk39
+xW2kIHaFWxt4Bzm5h3lzhSVyhVADhS6d/r+bDGqGKCvu7yrBJ8UEkeOtzUFXnEu/
+F6xk/Z94SmwdHTbyaIIQ625uFbJcMx8rpnCL5koXgl7N4JPXh8f8dxuLQ5cc+8+b
+NtU8leECgYEA4M4Os5hkVe0vgyxurs9CHGodqVBr5zQTJP68+PCPwWNnbzvhldER
+DihtVCGN4Zpq1dgdsqMsUToG1SmlCVVmeDjSxHbDg3hpdkHr+t9mpI4TeK0sGI/a
+UmeW6ONeexf7KX+nje8MhEKpA2tu1HIadt1s4lCd5GGk5CD0QsYlb30CgYEA0/bn
+3UDRw4jlzbt7cRIAzZNXVHEa+ONKOW/KhccgeMpo/dJ1fIXdFzGqhlOlT6AeLCEM
+Ja8s15j1iQRdrHZbT0YCadTvozm02KlP2tNow54JpHUJJmiBxmH1koLc/pk7QcyD
+1674HONlGvXh7tWw6UyjXc6rJAyvIrZQnQIdY3cCgYBc9jj0IZeUROH573zRwxlG
+oMclRgFo+YrVKJZCp0/7G70hLXUKvAq+fQ9A1CNU4MM/LQCS55EjAcjjizYZFvyp
+yG24GpidHEUYRwhrlMhgUfRRWeM7QPl6TCYGpkdixbbyITzLn8fgRaSYqmuJZKn2
+73fgWpAAajSCtfHsTv4aDQKBgQCaN2/nGDwF6dpY3uknERQofeTx+QDIyIW+WEmf
+H4vOlmXhFniIStTbBTWuWblSv4p0TO8Lk/IqQo2STOzih5JTkPo8icJ4nYmogTcq
+XNpCSP92+ffYS/zvm2ISYMftLQtiCix6hkDas89h2DezjyIR+8J4g98ccWYS+VaZ
+hWpgbQKBgQCTtxwRn0ACOFP6tuIbIl9Sr/3C8cmazbMml8ykSG8jH8M9XOCaG2rD
+Fce0J3YozhTW0hvDJ7UU4FzoM4l0VvUlMtiq1I3NtJcI+qzMHYV1xVqe4CpEvGQF
+sjKkF4lVV7IrGv+d23287WlywlEcMkJVxendjdyBrMkc6ITsMBCPag==
+-----END RSA PRIVATE KEY-----)"""";
+
+// The certificate for your device
+const string aws_cert_crt = R""""(-----BEGIN CERTIFICATE-----
+MIIDWjCCAkKgAwIBAgIVAK8SOyw1o9iq9pREoSvwB5gP50OAMA0GCSqGSIb3DQEB
+CwUAME0xSzBJBgNVBAsMQkFtYXpvbiBXZWIgU2VydmljZXMgTz1BbWF6b24uY29t
+IEluYy4gTD1TZWF0dGxlIFNUPVdhc2hpbmd0b24gQz1VUzAeFw0yMjA1MjQwODQ2
+NDRaFw00OTEyMzEyMzU5NTlaMB4xHDAaBgNVBAMME0FXUyBJb1QgQ2VydGlmaWNh
+dGUwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC6Iqe8YUGaZjtsEft7
+N73WTaNJ5z1HvYaiPNG3G4muK8Wd0QtFtIzYjpFOY54ecrOlJbPDRDcOLgNi1Jl4
+ZzIIvxqay8YsX/ZnTbXskzkuZrSh9GFK2BIQ4uAdzCx/oJbA70+FBGDTJXOmYPIQ
+lG+92her9C+dN0tBolAPpZDxeeErIkUrgXoNMoPXsviEUSkikkB4B/7YAXNM5rMw
+uRl3XvzuhjgEnUMLcESi5GSNHX3wxErlKPcuL1W81e9k39MwQvJSsbIhOPRhLcy7
+va6uwTRy64nnU+q0JFMf6wu+AoaHz+n03Bmv+k9F77DW17loih61LBvWQQ+OinAw
+rSobAgMBAAGjYDBeMB8GA1UdIwQYMBaAFDj7L4zZjElqjJQL2AXhCLO1w48eMB0G
+A1UdDgQWBBT77goAafOxynTMO0kpilN3jtbqnzAMBgNVHRMBAf8EAjAAMA4GA1Ud
+DwEB/wQEAwIHgDANBgkqhkiG9w0BAQsFAAOCAQEAiUqG5DYb+QcF1QEJ1xD5UxMq
+e8GR9J5zt/Jb1Udr9iVdtTwt1RVAqSPont5KlowwQ8LM9XD1Mk5Wxc3iV7bHNF+o
+sH/Xx9RBxJNTB79HdH+YpG5unNCSnIDvdKOiigXtckYJ9WBB8LOHrS4PzBWSk7ko
+0vPHo8UNpY3WtFqeyG6E2sMcQFphx4yW7sGxVyFtx0rdujGyGF4MgFhcMuyrJwCr
+1/ifVMyKID+Pk20f079Lze9tGQ5ujoeZc5XuwUgVOmmDTg6j9/+/62VqBXQBhkM8
+ivv7OupmyFRIbT/6RjIVn+FidtWOM5qEMwqvGDgH1KxgipBldI285Nvhq8MF0A==
+-----END CERTIFICATE-----)"""";
+
+#endif
