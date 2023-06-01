@@ -1,10 +1,7 @@
 {| width="99%"
  | style="vertical-align:top" |
 
-__NOTOC__
-<div style="border: 1px solid black; background-color:purple; font-size:1px; height:20px; border-bottom:1px solid 97BF87">
-</div >
-<div style="border: 1px solid black; background-color:whitesmoke; padding:7px;">
+
 __NOEDITSECTION__
 ==''Fach''==
 '''PMT2'''
@@ -14,9 +11,6 @@ __NOEDITSECTION__
 
 ==''Betreuer''==
 '''Prof. Dr. rer. nat. Roland Mandl'''
-
-| width="80%" style="vertical-align:top" |
-<br>
 
 __INHALTSVERZEICHNIS__
 
