@@ -4,8 +4,6 @@ Studenten::Leonard Kreil; Christoph Härdl; Michael Graml
 
 Betreuer::Prof. Dr. rer. nat. Roland Mandl
 
-__INHALTSVERZEICHNIS__
-
 ## Projektbeschreibung 📄
 
 Das Projekt stellt eine batteriebetriebene Powerbank, die entweder über Solarpanelen oder USB-Mini Typ B Anschluss aufgeladen werden kann, dar. Dabei ist das Ziel die erzeugte Leistung für Kleingeräte zu verwenden. Außerdem kann per Smartphone App die Lade- sowie Entladeleistung und der aktuelle Ladestand der Batterie verfolgt und angezeigt werden. ![image](https://github.com/LeonardKreil/pmt_2/assets/119797039/62cc3ec5-52fe-4520-8327-4983734a5881)
